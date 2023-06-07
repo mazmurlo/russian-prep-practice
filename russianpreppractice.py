@@ -1,7 +1,10 @@
 import random
-vocablist = "с, with\nу, near\nв, во +acc, in\nна +acc, onto\nо, об +prep, about\nо, об +acc, against\nк, towards\nза +instr, behind\nиз, from\nот, from\nпо, along\nв, во +prep, in\nна +prep, on\nза +acc, for"
-def preppractice():
-    y = input("Amount of times to practice? ")
+vocablist = "с, with\nу, near\nв, во +acc, into\nна +acc, onto\nо, об +prep, about\nо, об +acc, against\nк, towards\nза +instr, behind\nиз, from\nот, from\nпо, along\nв, во +prep, in\nна +prep, on\nза +acc, for"
+def preppractice(y):
+    if y is None:
+        y = input("Amount of times to practice? ")
+    if y == "q" or y == "quit":
+        menu()
     y = int(y)
     x = 0
     right = 0
@@ -24,7 +27,7 @@ def preppractice():
                 print("Stupid!")
                 wrong += 1
         elif var == 'в, во +acc':
-            if input("What? ") == "to":
+            if input("What? ") == "into":
                 print("Good!")
                 right += 1
             else: 
@@ -122,17 +125,20 @@ def preppractice():
         preppractice()
     else: menu()
 def menu():
+    t = None
     wow = input("Choose something: ")
-    if wow.lower() == "practice" or wow.lower() == "p":
-        preppractice()
-    elif wow.lower() == "vocab" or wow.lower() == "v":
+    if wow[0].lower() == "p":
+        if len(wow) > 2:
+            t = int(wow[2:])
+        preppractice(t)
+    elif wow.lower() == "v":
         print(vocablist)
         menu()
-    elif wow.lower() == "quit" or wow.lower() == "q":
+    elif wow.lower() == "q":
         print("Have a good day!")
         exit()
-    elif wow.lower() == "help" or wow.lower() == "h":
-        print("Tool for practicing basic Russsian prepositions.\nCommands:\n p practice vocab\n v see vocab list\n q quit\n h help")
+    elif wow.lower() == "h":
+        print("Tool for practicing basic Russsian prepositions.\nCommands:\n p x | practice vocab x number of times (x argument optional)\n v   | see vocab list\n q   | quit\n h   | help")
         menu()
     else:
         print("You have to choose something! Enter h to see a list of commands.")
