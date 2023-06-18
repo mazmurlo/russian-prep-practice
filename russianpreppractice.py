@@ -122,7 +122,8 @@ def preppractice(y):
     print("Amount wrong:", wrong)
     goagain = input("Go again? Y/N: ")
     if goagain.lower() == "y":
-        preppractice()
+        q = y
+        preppractice(q)
     else: menu()
 def menu():
     t = None
