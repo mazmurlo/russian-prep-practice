@@ -1,0 +1,16 @@
+{
+    "с": "with",
+    "у": "near",
+    "в, во +acc": "into",
+    "на +acc": "onto",
+    "о, об +acc": "against",
+    "о, об +prep": "about",
+    "к": "towards",
+    "за +instr": "behind",
+    "из": "from",
+    "от": "from",
+    "по": "along",
+    "в, во +prep": "in",
+    "на +prep": "on",
+    "за +acc": "for"
+}
