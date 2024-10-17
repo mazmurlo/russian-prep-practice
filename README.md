@@ -1,0 +1,1 @@
+simple terminal-based thing to practice russian prepositions using flash card system. mainly for my own practice, both with coding and just with russian prepositions. planning on expanding on it to become lightweight flashcard system for other uses
